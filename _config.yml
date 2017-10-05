@@ -2,9 +2,9 @@
 permalink:           pretty
 
 # Setup
-title:               Poole
-tagline:             The Jekyll Butler
-url:                 http://getpoole.com
+title: 				 Random Thoughts, Hints and other Embedded madness
+tagline:             Feeling adventurous?
+url: 				 https://olivierschonken.github.io
 paginate:            1
 baseurl:             ""
 
@@ -17,14 +17,21 @@ sass:
 
 # About/contact
 author:
-  name:              Mark Otto
-  url:               https://twitter.com/mdo
-  email:             markdotto@gmail.com
+  name:              Olivier Schonken
+  url:               https://olivierschonken.github.io
+  email:             olivier.schonken@gmail.com
+  github_username:  olivierschonken
 
 # Custom vars
 version:             2.0.0
 github:
-  repo:              https://github.com/poole/poole
+  repo:              https://github.com/olivierschonken/olivierschonken.github.io
+
+# This is the list of pages to include in the header of the website.
+pages_list:       
+  About: '/about/'
+  Archive: '/archive/'
+  Feed: '/atom.xml'
 
 # Gems
 gems:
