@@ -7,6 +7,7 @@ tagline:             Feeling adventurous?
 url: 				 https://olivierschonken.github.io
 paginate:            1
 baseurl:             ""
+markdown:			 kramdown
 
 # Assets
 #
@@ -32,8 +33,11 @@ pages_list:
   About: '/about/'
   Archive: '/archive/'
   Feed: '/atom.xml'
+plugins:
+  - jekyll-seo-tag
 
 # Gems
 gems:
   - jekyll-paginate
   - jekyll-gist
+
