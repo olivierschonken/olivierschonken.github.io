@@ -27,7 +27,7 @@ repository, thus it should be smooth sailing in future releases.
 # Get source and build
 Before trying to build the buildroot source, make sure you have all the required packages installed as specified in the [buildroot manual](https://buildroot.org/downloads/manual/manual.html#requirement)
 
-Get Buildroot source with minor SDL, VC4 drm and mesa patches
+Get Buildroot source with minor SDL, VC4 drm and mesa patches [here](https://github.com/olivierschonken/buildroot/tree/rpi3-drm)
 ```
 git clone https://github.com/olivierschonken/buildroot.git -b rpi3-drm
 
@@ -58,8 +58,8 @@ Toolchain -> Toolchain -> Linaro AArch64 2017.02
 ## Latest Kernel source containing the VC4 DRM driver
 ```
 Kernel -> Custom Git repository -> Enter sha of latest commit from 4.13.y branch 
-* e.g. [github](https://github.com/raspberrypi/linux/commits/rpi-4.13.y) 52cf298f815cb319c999849aece79fa12a5c1970 as on 8-10-2017
 ```
+* e.g. [github](https://github.com/raspberrypi/linux/commits/rpi-4.13.y "Github repo for RPI kernel") 7f47540d865c2b1daa37fbe12f560fd66834299d as on 12-10-2017
 ## Graphics packages and drivers selection in buildroot
 ```
 Target packages -> Graphic Libraries and applications -> mesa3d
