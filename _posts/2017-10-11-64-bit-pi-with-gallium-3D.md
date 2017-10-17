@@ -25,6 +25,8 @@ Most of the patches to buildroot to fix selection and compilation of the VC4 gal
 repository, thus it should be smooth sailing in future releases.
 
 # Get source and build
+Before trying to build the buildroot source, make sure you have all the required packages installed as specified in the [buildroot manual](https://buildroot.org/downloads/manual/manual.html#requirement)
+
 Get Buildroot source with minor SDL, VC4 drm and mesa patches
 ```
 git clone https://github.com/olivierschonken/buildroot.git -b rpi3-drm
@@ -39,6 +41,12 @@ make all
 This will produce a sdcard image that can be written directly to sdcard using dd in linux, or win32diskimager(or similar) in Windows.
 Example writing with dd -> sudo dd if=output/images/sdcard.img of=/dev/mmcblk0 status=progress
 
+# Changes from standard buildroot 2017.08
+* Add SDL2 DRM/KMS driver
+* Fix dependency issues for building libdrm and VC4 with aarch64 compiler
+* Add support for building and installing kernel overlays for Raspberry Pi
+* Turn on audio and add vc4-kms-v3d dtoverlay to config.txt
+
 # Important parts of the configuration
 
 ## The toolchain for building for 64-bit Raspberry Pi3.
@@ -49,7 +57,8 @@ Toolchain -> Toolchain -> Linaro AArch64 2017.02
 ```
 ## Latest Kernel source containing the VC4 DRM driver
 ```
-Kernel -> Custom Git repository -> Enter sha of latest commit from 4.13.y branch on https://github.com/raspberrypi/linux.git - e.g. 52cf298f815cb319c999849aece79fa12a5c1970 on 8-10-2017
+Kernel -> Custom Git repository -> Enter sha of latest commit from 4.13.y branch 
+* e.g. [github](https://github.com/raspberrypi/linux/commits/rpi-4.13.y) 52cf298f815cb319c999849aece79fa12a5c1970 as on 8-10-2017
 ```
 ## Graphics packages and drivers selection in buildroot
 ```
